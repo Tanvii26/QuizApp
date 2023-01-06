@@ -1,0 +1,77 @@
+*, *::before, *::after{
+    box-sizing: border-box;
+    font-family: 'Akaya Telivigala';
+}
+:root{
+    --hue-neutral: 2;
+    --hue-incorrect: 0;
+    --hue-correct: 145;
+    --hue-btn: 270;
+    /* variable set kardiye */
+}
+body{
+    --hue:var(--hue-neutral); /* personalized scope variable*/
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: hsl(var(--hue), 83%, 85%);
+}
+body.correct{
+    --hue: var(--hue-correct);
+    background-color: hsl(var(--hue), 100%, 25%);
+}
+body.wrong{
+    --hue: var(--hue-incorrect);
+    background-color: hsl(var(--hue), 100%, 60%);
+}
+.cont{
+    width: 800px;
+    max-width: 80%;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 0 10px 2px;
+}
+.btn-grid{
+    display: grid;
+    grid-template-columns: repeat(2,auto);
+    gap: 10px;
+    margin: 20px 0px;
+}
+.btn{
+    --hue: var(--hue-btn);
+    background-color: hsl(var(--hue),100%,80%);
+    border: 3px solid hsl(var(--hue), 100%, 75%);
+    border-style: outset;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+.btn:hover{
+    background-image: linear-gradient(to right, #A3A1FF, #f67bf6,#d83ff7);
+    box-shadow: 0 4px 15px 0 rgba(126, 52, 161, 0.75);
+    color: white;
+    transition: all .3s ease-in-out;
+}
+.btn.correct{
+    --hue: var(--hue-correct)
+}
+.btn.wrong{
+    --hue: var(--hue-incorrect)
+}
+.start-btn, .next-btn{
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 30px;
+}
+.control{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ .hide{
+    display: none;
+}
